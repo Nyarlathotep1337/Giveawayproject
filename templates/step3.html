@@ -1,0 +1,33 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+   <div data-step="3">
+            <h3>Wybierz organizacje, której chcesz pomóc:</h3>
+            {% for o in organizations %}
+            <div class="form-group form-group--checkbox">
+              <label>
+                <input type="radio" name="organization" value="{{ o.id }}" />
+                <span class="checkbox radio"></span>
+                <span class="description">
+                  <div class="title">{{ o.name }}</div>
+                  <div class="subtitle">
+                    {{ o.description }}
+                  </div>
+                </span>
+              </label>
+            </div>
+            {% endfor %}
+   </div>
+    <script src="{% static 'js/app.js' %}"></script>
+
+</body>
+</html>
